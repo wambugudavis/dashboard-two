@@ -1,0 +1,69 @@
+<template>
+    <div class="h-screen fixed flex justify-center w-24">
+        <div class="py-6 px-3 flex flex-col">
+            <div class="flex items-center" style="height: 70vh">
+                <div>
+                    <div v-for="(link, index) in links" :key="index"
+                         class="h-10 w-10 my-8 rounded-full hover:text-white hover:shadow-teal-love hover:bg-gradient-teal-love flex items-center justify-center"
+                         :class="{
+                         'text-white shadow-teal-love bg-gradient-teal-love': link.active,
+                         'text-gray-500': !link.active
+                         }"
+                    >
+                        <svg-icon
+                                :name="link.icon"
+                                class="fill-current"
+                        />
+                    </div>
+                </div>
+            </div>
+            <div class="flex-1 flex flex-col items-end">
+                <div class="h-10 w-10 my-8 rounded-full text-gray-500 hover:text-white hover:shadow-teal-love hover:bg-gradient-teal-love flex items-center justify-center">
+                    <div class="relative">
+                        <svg-icon
+                                name="Notification"
+                                class="fill-current"
+                        />
+                        <span class="absolute right-0 -mt-5 h-2 w-2 mr-1 bg-red-600 rounded-full"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+    import SvgIcon from "@/components/SVG"
+
+    export default {
+        data: () => {
+            return {
+                links: [
+                    {
+                        icon: 'Plus',
+                        active: true
+                    },
+                    {
+                        icon: 'Grid',
+                        active: false
+                    },
+                    {
+                        icon: 'Menu',
+                        active: false
+                    },
+                    {
+                        icon: 'Graph',
+                        active: false
+                    },
+                    {
+                        icon: 'Cog',
+                        active: false
+                    }
+                ]
+            }
+        },
+        components: {
+            SvgIcon
+        }
+    }
+</script>
