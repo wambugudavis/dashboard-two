@@ -1,8 +1,8 @@
 <template>
-    <div class="flex flex-row">
+    <div class="flex flex-row -mx-3">
         <div v-for="(card, index) in cards" :key="index"
-             class="group flex-1 m-3 shadow-lg rounded-lg bg-white transform hover:scale-115 hover:-translate-x-2 transition ease-in duration-150"
-             :class="`hover:bg-${card.class}`"
+             class="group flex-1 m-3 shadow-md rounded-lg bg-white transform hover:scale-115 transition ease-in duration-150"
+             :class="`hover:bg-${card.class} hover:shadow-2xl z-50`"
         >
             <div class="p-4 h-full flex flex-col">
                 <div class="flex flex-row items-center">
@@ -37,11 +37,12 @@
                 </div>
                 <div class="h-5 flex items-center">
                     <span
-                            class="h-1 rounded-full z-10 w-20"
+                            class="rounded-full z-10 w-20"
+                            style="height: 0.35rem"
                             :class="`bg-${card.class} group-hover:bg-white`"
                             :style="`width: ${card.progress}% `"
                     ></span>
-                    <span class="h-1 bg-gray-100 group-hover:opacity-25 rounded-full flex-1 -ml-1"></span>
+                    <span class="bg-gray-100 group-hover:opacity-25 rounded-full flex-1 -ml-1" style="height: 0.35rem"></span>
                 </div>
             </div>
         </div>

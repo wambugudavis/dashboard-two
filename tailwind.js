@@ -5,8 +5,11 @@ module.exports = {
                 'davis-grey-dark': '#454360',
                 'davis-grey-light': '#F6F6FD',
                 'davis-red': '#FE4C5F',
+                'davis-red-light': 'rgba(254,76,95,0.25)',
                 'davis-purple': '#6C6DE5',
-                'davis-orange': '#FAAB1D'
+                'davis-purple-light': 'rgba(108,109,229,0.25)',
+                'davis-orange': '#FAAB1D',
+                'davis-orange-light': 'rgba(250,171,29,0.25)'
             },
             scale: {
                 '115': '1.15'

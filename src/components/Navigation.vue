@@ -4,15 +4,18 @@
             <div class="flex items-center" style="height: 70vh">
                 <div>
                     <div v-for="(link, index) in links" :key="index"
-                         class="h-10 w-10 my-8 rounded-full hover:text-white hover:shadow-teal-love hover:bg-gradient-teal-love flex items-center justify-center"
+                         class="h-10 w-10 my-8 rounded-full hover:text-white flex items-center justify-center"
                          :class="{
-                         'text-white shadow-teal-love bg-gradient-teal-love': link.active,
+                         'text-white': link.active,
                          'text-gray-500': !link.active
                          }"
                     >
+                        <div v-if="link.active" class="absolute left-0">
+                            <div class="h-12 bg-white rounded-br-lg rounded-tr-lg" style="width: 0.35rem"></div>
+                        </div>
                         <svg-icon
                                 :name="link.icon"
-                                class="fill-current"
+                                class="stroke-current"
                         />
                     </div>
                 </div>
@@ -40,19 +43,19 @@
             return {
                 links: [
                     {
-                        icon: 'Plus',
+                        icon: 'Home',
                         active: true
                     },
                     {
-                        icon: 'Grid',
+                        icon: 'List',
                         active: false
                     },
                     {
-                        icon: 'Menu',
+                        icon: 'Folder',
                         active: false
                     },
                     {
-                        icon: 'Graph',
+                        icon: 'Annotation',
                         active: false
                     },
                     {
