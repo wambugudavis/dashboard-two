@@ -177,13 +177,6 @@
             setNextWeek() {
                 this.startOfWeek = moment(this.startOfWeek).add(1, 'weeks').weekday(1)
             }
-        },
-        mounted() {
-            const todayMeetings = this.meetings.filter((meeting) => {
-                return this.activeDay.isSame(moment(meeting.date))
-            })
-
-            console.log(todayMeetings);
         }
     }
 </script>
